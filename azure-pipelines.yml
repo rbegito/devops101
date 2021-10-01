@@ -21,6 +21,9 @@ steps:
       command: 'build'
       projects: '**/*.csproj'
       arguments: '--configuration $(BuildConfiguration)'
+  - task: WhiteSource@21
+    inputs:
+      projectName: 'WebApplication'
 
   - task: DotNetCoreCLI@2
     name: 'UnitTest'
